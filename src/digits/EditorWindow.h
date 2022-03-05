@@ -12,6 +12,7 @@
 
 #include "../vstgui/plugin-bindings/aeffguieditor.h"
 #include "VstCore.h" // kNumParameters
+using namespace VSTGUI;
 
 class EditorWindow : public AEffGUIEditor, public IControlListener
 {

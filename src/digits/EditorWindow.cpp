@@ -15,6 +15,8 @@
 #define snprintf _snprintf
 #endif
 
+using namespace VSTGUI;
+
 EditorWindow::EditorWindow(void* p) :
 	AEffGUIEditor(p),
     m_me((VstCore*)p),
@@ -328,7 +330,7 @@ void EditorWindow::DrawEnvPanel(CFrame* destFrame, CBitmap* dialImg, CBitmap* di
 														  slidersOffX+x+kSidePadding, 
 														  slidersOffX+x+kSidePadding+sliderBGImg->getWidth()-sliderNubImg->getWidth(),
 														  sliderNubImg, sliderBGImg);
-		slider->setStyle(kHorizontal);
+        slider->setStyle(CSliderBase::CSliderBase::kHorizontal);
 		slider->setDefaultValue(0);
 		destFrame->addView(slider);
 		m_controls[VstCore::kShpMin] = slider;
@@ -353,7 +355,7 @@ void EditorWindow::DrawEnvPanel(CFrame* destFrame, CBitmap* dialImg, CBitmap* di
                                                       slidersOffX+x+kSidePadding,
                                                       slidersOffX+x+kSidePadding+sliderBGImg->getWidth()-sliderNubImg->getWidth(),
                                                       sliderNubImg, sliderBGImg);
-		slider->setStyle(kHorizontal);
+		slider->setStyle(CSliderBase::kHorizontal);
 		slider->setDefaultValue(1.0f);
 		destFrame->addView(slider);
 		m_controls[VstCore::kShpMax] = slider;
@@ -373,7 +375,7 @@ void EditorWindow::DrawEnvPanel(CFrame* destFrame, CBitmap* dialImg, CBitmap* di
                                        slidersOffX+x+kSidePadding,
                                        slidersOffX+x+kSidePadding+sliderBGImg->getWidth()-sliderNubImg->getWidth(),
                                        sliderNubImg, sliderBGImg);
-        slider->setStyle(kHorizontal);
+        slider->setStyle(CSliderBase::kHorizontal);
         slider->setDefaultValue(0);
         destFrame->addView(slider);
         m_controls[VstCore::kShpRateScale] = slider;
@@ -392,7 +394,7 @@ void EditorWindow::DrawEnvPanel(CFrame* destFrame, CBitmap* dialImg, CBitmap* di
                                        slidersOffX+x+kSidePadding,
                                        slidersOffX+x+kSidePadding+sliderBGImg->getWidth()-sliderNubImg->getWidth(),
                                        sliderNubImg, sliderBGImg);
-        slider->setStyle(kHorizontal);
+        slider->setStyle(CSliderBase::kHorizontal);
         slider->setDefaultValue(0);
         destFrame->addView(slider);
         m_controls[VstCore::kShpLevelScale] = slider;
@@ -419,7 +421,7 @@ void EditorWindow::DrawEnvPanel(CFrame* destFrame, CBitmap* dialImg, CBitmap* di
                                                           slidersOffX+x+kSidePadding,
                                                           slidersOffX+x+kSidePadding+sliderBGImg->getWidth()-sliderNubImg->getWidth(),
                                                           sliderNubImg, sliderBGImg);
-        slider->setStyle(kHorizontal);
+        slider->setStyle(CSliderBase::kHorizontal);
         slider->setDefaultValue(0);
         destFrame->addView(slider);
         m_controls[VstCore::kAmpRateScale] = slider;
@@ -721,7 +723,7 @@ void EditorWindow::DrawLFOPanel(CFrame* destFrame, CBitmap* dialImg, CBitmap* di
 													  60+x+kSidePadding, 
 													  60+x+kSidePadding+sliderBGImg->getWidth()-sliderNubImg->getWidth(),
 													  sliderNubImg, sliderBGImg);
-	slider->setStyle(kHorizontal);
+	slider->setStyle(CSliderBase::kHorizontal);
 	slider->setDefaultValue(0);
 	destFrame->addView(slider);
 	m_controls[VstCore::kLFOShp + paramOffset] = slider;
@@ -750,7 +752,7 @@ void EditorWindow::DrawLFOPanel(CFrame* destFrame, CBitmap* dialImg, CBitmap* di
 													  60+x+kSidePadding, 
 													  60+x+kSidePadding+sliderBGImg->getWidth()-sliderNubImg->getWidth(),
 													  sliderNubImg, sliderBGImg);
-	slider->setStyle(kHorizontal);
+	slider->setStyle(CSliderBase::kHorizontal);
 	slider->setDefaultValue(0);
 	destFrame->addView(slider);
 	m_controls[VstCore::kLFOAmp + paramOffset] = slider;
@@ -774,7 +776,7 @@ void EditorWindow::DrawLFOPanel(CFrame* destFrame, CBitmap* dialImg, CBitmap* di
 								   60+x+kSidePadding, 
 								   60+x+kSidePadding+sliderBGImg->getWidth()-sliderNubImg->getWidth(),
 								   sliderNubImg, sliderBGImg);
-	slider->setStyle(kHorizontal);
+	slider->setStyle(CSliderBase::kHorizontal);
 	slider->setDefaultValue(0);
 	destFrame->addView(slider);
 	m_controls[VstCore::kLFOFrq + paramOffset] = slider;
@@ -797,7 +799,7 @@ void EditorWindow::DrawLFOPanel(CFrame* destFrame, CBitmap* dialImg, CBitmap* di
 								   60+x+kSidePadding, 
 								   60+x+kSidePadding+sliderBGImg->getWidth()-sliderNubImg->getWidth(),
 								   sliderNubImg, sliderBGImg);
-	slider->setStyle(kHorizontal);
+	slider->setStyle(CSliderBase::kHorizontal);
 	slider->setDefaultValue(0);
 	destFrame->addView(slider);
 	m_controls[VstCore::kLFOPWM + paramOffset] = slider;
@@ -1272,7 +1274,7 @@ void EditorWindow::DrawVelocityAftertouchPanel(CFrame* destFrame, CBitmap* dialI
 													  slidersOffX+x+kSidePadding, 
 													  slidersOffX+x+kSidePadding+sliderBGImg->getWidth()-sliderNubImg->getWidth(),
 													  sliderNubImg, sliderBGImg);
-	slider->setStyle(kHorizontal);
+	slider->setStyle(CSliderBase::kHorizontal);
 	slider->setDefaultValue(0);
 	destFrame->addView(slider);
 	if (forMode == kAT)
@@ -1312,7 +1314,7 @@ void EditorWindow::DrawVelocityAftertouchPanel(CFrame* destFrame, CBitmap* dialI
 													  slidersOffX+x+kSidePadding, 
 													  slidersOffX+x+kSidePadding+sliderBGImg->getWidth()-sliderNubImg->getWidth(),
 													  sliderNubImg, sliderBGImg);
-	slider->setStyle(kHorizontal);
+	slider->setStyle(CSliderBase::kHorizontal);
 	slider->setDefaultValue(0);
 	destFrame->addView(slider);
     if (forMode == kAT)
@@ -1842,7 +1844,7 @@ void EditorWindow::setParameter(VstInt32 index, float value)
             ShowFXPanel(2);
         else if (index == kGUIParam_SaveOK)
         {
-            std::string s = m_saveFilenameField->getText().get();
+            std::string s = m_saveFilenameField->getText().getString();
             SavePreset(s);
             m_savePopup->setVisible(false);
             

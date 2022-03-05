@@ -14,6 +14,8 @@
 #include "../vstgui/plugin-bindings/aeffguieditor.h" // createEditor
 #endif
 
+using namespace VSTGUI;
+
 float VstCore::s_freqDelta[kOctaves*12];
 const float kDelayMinimum = 50.0f;
 const float kDelayRange = 400.0f;
@@ -1227,7 +1229,7 @@ void VstCore::setParameter(VstInt32 index, float value)
 {
 	if (index >= kNumParams)
     {
-#if !defined(FAUX_VST_HEADER) && !defined(NO_EDITOR)
+#if 0//!defined(FAUX_VST_HEADER) && !defined(NO_EDITOR)
         if (editor && index != kDelLoss)
             ((AEffGUIEditor*)editor)->setParameter(index, value);
 #endif
